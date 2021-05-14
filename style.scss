@@ -537,6 +537,7 @@ progress::-webkit-progress-value {
 
 .section4__list {
   padding-top: 1.5rem;
+  width: 300px;
   list-style: none;
 }
 
@@ -1014,6 +1015,7 @@ footer {
 .footer__list li {
   color: #1e0e00;
   text-decoration: none;
+  white-space: nowrap;
   font-weight: normal;
   font-style: normal;
   font-size: 1.6rem;
@@ -1023,6 +1025,7 @@ footer {
 
 .footer__wrapper {
   padding-top: 6.3rem;
+  padding-right: 25rem;
 }
 
 .pad {
@@ -1064,6 +1067,10 @@ footer {
 
 
 @media (min-width: 350px) and (max-width: 576px) {
+  .section4__circle3 {
+    display: none;
+  }
+
   .section3__title h5 {
     padding-left: 2rem;
   }
@@ -1553,12 +1560,20 @@ footer {
   .form {
     padding-left: 5rem;
   }
+
+  .footer__wrapper {
+    padding-right: 0;
+  }
 }
 
 
 
 
 @media (min-width: 1200px) and (max-width: 1360px) {
+  .footer__wrapper {
+    padding-right: 0;
+  }
+
   .section6__left__wrapper {
     padding-left: 20rem;
   }
