@@ -1,3 +1,8 @@
+const menuItem = document.getElementById('accord');
+menuItem.addEventListener('click', menuOpen);
+
+function menuOpen(e) {}
+
 $('.section1__slider').slick({
   dots: true,
   arrows: false,
