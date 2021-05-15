@@ -1,9 +1,9 @@
 const menuItem = document.getElementById('accord');
 const menu = document.getElementById('hide-menu');
+const arrow = document.querySelector('.header__arrow');
 document.addEventListener('click', hideMenu);
 
 function hideMenu(e) {
-  const arrow = document.querySelector('.header__arrow');
   if (e.target === menuItem) {
     arrow.classList.add('rotate');
     menu.classList.add('active-menu');
