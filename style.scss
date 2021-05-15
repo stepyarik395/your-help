@@ -12,12 +12,22 @@ html {
   font-size: 10px;
 }
 
+.nav-item {
+  position: relative;
+  z-index: 5;
+}
+
+.color-font-green {
+  color: #3e8e31 !important;
+}
+
 
 .header__arrow {
   position: absolute;
   top: 18px;
   right: 16px;
   transform: rotate(360deg);
+  transition: all 500ms;
 }
 
 .bcg-header {
@@ -32,11 +42,34 @@ html {
   height: 100px;
 }
 
+.rotate {
+  transform: rotate(180deg);
+  transition: all 500ms;
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.active-menu {
+  display: block !important;
+  animation-name: slide;
+  animation-duration: .5s;
+  animation-timing-function: ease;
+}
+
 .hide-menu {
   position: absolute;
   top: 40px;
   right: 0;
-  z-index: 2;
+  z-index: 5;
+  display: none;
   width: 143px;
   border-radius: 4px;
   background: #ffffff;
@@ -107,14 +140,6 @@ header {
       &:hover {
         color: #1e0e00;
       }
-
-      // &:nth-child(1) {
-      //   padding-right: 6rem;
-      // }
-
-      // &:nth-child(2) {
-      //   padding-right: 6rem;
-      // }
     }
   }
 }
@@ -191,7 +216,6 @@ header {
 }
 
 .section1__button {
-  // display: inline-block;
   width: 222px;
   height: 48px;
   border: none;
@@ -204,7 +228,6 @@ header {
   font-size: 1.8rem;
   font-family: 'Roboto';
   line-height: 2.1rem;
-  // transform: translateZ(0);
 
   -webkit-tap-highlight-color: transparent;
 
@@ -225,7 +248,7 @@ header {
 }
 
 .categories__text {
-  padding-top: .4rem;
+  padding-top: .8rem;
   color: #1e0e00;
   font-weight: normal;
   font-style: normal;
@@ -235,6 +258,7 @@ header {
 }
 
 .color-green-set {
+  padding-top: .8rem;
   color: #3e8e31 !important;
   text-align: center;
   font-weight: normal;
@@ -326,7 +350,6 @@ header {
     bottom: 15px;
     width: 289px;
     height: 394px;
-    // height: 387px;
   }
 }
 
@@ -410,9 +433,9 @@ header {
   text-align: right;
   font-weight: 300;
   font-style: normal;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-family: 'Roboto';
-  line-height: 21px;
+  line-height: 2.1rem;
 }
 
 .fz_medium {
@@ -469,8 +492,8 @@ progress::-webkit-progress-value {
   position: relative;
   z-index: 2;
   margin: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   padding-left: 3.9rem;
   border-radius: 4px;
   background: #ffebb9;
@@ -489,7 +512,7 @@ progress::-webkit-progress-value {
   padding-left: 3.9rem;
   height: 100px;
   background-position: 0 30px;
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-size: 1.6rem;
   font-family: 'Roboto';
@@ -888,9 +911,9 @@ progress::-webkit-progress-value {
   background: #ffffff;
   font-weight: normal;
   font-style: normal;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-family: 'Roboto';
-  line-height: 21px;
+  line-height: 2.1rem;
 
   &:active {
     outline: none;
@@ -904,7 +927,7 @@ progress::-webkit-progress-value {
 .fildtext {
   box-sizing: border-box;
   margin-top: 1.5rem;
-  padding-top: .5rem;
+  padding-top: .7rem;
   padding-left: 1.5rem;
   height: 98px;
   outline: none;
@@ -914,9 +937,9 @@ progress::-webkit-progress-value {
   color: #6f6f6f;
   font-weight: 300;
   font-style: normal;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-family: 'Roboto';
-  line-height: 16px;
+  line-height: 1.6rem;
   resize: none;
 
   &:focus {
@@ -934,9 +957,9 @@ progress::-webkit-progress-value {
   color: #1e0e00;
   font-weight: 300;
   font-style: normal;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-family: 'Roboto';
-  line-height: 19px;
+  line-height: 1.9rem;
 }
 
 .section6__right_set {
@@ -1115,6 +1138,10 @@ footer {
 
 
 @media (min-width: 350px) and (max-width: 576px) {
+  .header__arrow {
+    display: none;
+  }
+
   .section4__circle3 {
     display: none;
   }
@@ -1178,7 +1205,8 @@ footer {
   }
 
   header nav a {
-    font-size: 1.4rem;
+    padding-left: 1rem;
+    font-size: 1.2rem;
   }
 
   .header__buttons__wrapper {
@@ -1288,8 +1316,6 @@ footer {
   .section2__wrapper__card {
     align-items: center;
     flex-direction: column;
-    // padding-right: 2rem;
-    // padding-left: 2rem;
     height: auto;
   }
 
@@ -1312,6 +1338,10 @@ footer {
 
 
 @media (min-width: 576px) and (max-width: 768px) {
+  .header__buttons__wrapper {
+    display: none;
+  }
+
   .header__logo {
     padding-right: 0;
     font-size: 1.6rem;
@@ -1324,18 +1354,6 @@ footer {
 
   .header__buttons__wrapper {
     padding-left: 2rem;
-  }
-
-  header nav a:nth-child(1) {
-    padding-right: 1rem;
-  }
-
-  header nav a:nth-child(2) {
-    padding-right: 1rem;
-  }
-
-  header nav a:nth-child(3) {
-    padding-right: 1rem;
   }
 
   .header__arrow {
@@ -1435,51 +1453,11 @@ footer {
   }
 }
 
-
-// @media (min-width: 992px) and (max-width: 1199px) {
-//   .section5 {
-//     overflow: hidden;
-//   }
-
-//   .section5__slider {
-//     width: 992px !important;
-//   }
-
-//   .header__logo {
-//     padding-right: 0;
-//   }
-
-//   .header__buttons__wrapper {
-//     padding-left: 5rem;
-//   }
-
-//   .campagins-card {
-//     width: 214px;
-
-//     &:hover {
-//       width: 230px;
-//     }
-//   }
-
-//   .section3__item {
-//     width: 280px;
-//   }
-
-//   .section3__description {
-//     font-size: 1.3rem;
-//   }
-
-//   .section6__left__wrapper {
-//     padding-left: 2rem;
-//   }
-
-//   .form {
-//     padding-left: 5rem;
-//   }
-// }
-
-
 @media (min-width: 768px) and (max-width: 992px) {
+  .header__buttons__wrapper {
+    display: none;
+  }
+
   .header__logo {
     padding-right: 0;
     font-size: 2.4rem;
@@ -1491,18 +1469,6 @@ footer {
 
   .header__buttons__wrapper {
     padding-left: 2rem;
-  }
-
-  header nav a:nth-child(1) {
-    padding-right: 2rem;
-  }
-
-  header nav a:nth-child(2) {
-    padding-right: 2rem;
-  }
-
-  header nav a:nth-child(3) {
-    padding-right: 2rem;
   }
 
   .header__arrow {
@@ -1617,8 +1583,12 @@ footer {
 
 
 
-@media (min-width: 1200px) and (max-width: 1360px) {
+@media (min-width: 1200px) and (max-width: 1400px) {
   .footer__wrapper {
+    padding-right: 0;
+  }
+
+  .header__logo {
     padding-right: 0;
   }
 

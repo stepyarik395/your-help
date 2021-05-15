@@ -1,7 +1,33 @@
 const menuItem = document.getElementById('accord');
-menuItem.addEventListener('click', menuOpen);
+const menu = document.getElementById('hide-menu');
+document.addEventListener('click', hideMenu);
 
-function menuOpen(e) {}
+function hideMenu(e) {
+  const arrow = document.querySelector('.header__arrow');
+  if (e.target === menuItem) {
+    arrow.classList.add('rotate');
+    menu.classList.add('active-menu');
+  } else {
+    arrow.classList.remove('rotate');
+    menu.classList.remove('active-menu');
+  }
+}
+
+$('.flowing-scroll').on('click', function () {
+  var el = $(this);
+  var dest = el.attr('href');
+  if (dest !== undefined && dest !== '') {
+    arrow.classList.remove('rotate');
+    menu.classList.remove('active-menu');
+    $('html').animate(
+      {
+        scrollTop: $(dest).offset().top,
+      },
+      100
+    );
+  }
+  return false;
+});
 
 $('.section1__slider').slick({
   dots: true,
@@ -29,7 +55,7 @@ $('.section5__slider').slick({
   slidesToScroll: 2,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 992,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
