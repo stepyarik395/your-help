@@ -33,6 +33,6 @@
   },
   "parcelCleanPaths": [
     "dist",
-    ".cache"
+    ".parcel-cache"
   ]
 }
