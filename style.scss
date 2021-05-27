@@ -3,8 +3,8 @@
   padding: 0;
 }
 
-@import url(/assets/lib/slick/slick-theme.css);
-@import url(/assets/lib/slick/slick.css);
+@import url(/node_modules/slick-carousel/slick/slick-theme.scss);
+@import url(/node_modules/slick-carousel/slick/slick.scss);
 
 
 @font-face {
@@ -1138,7 +1138,44 @@ footer {
   border-radius: 9em;
   background-color: #3e8e31;
   box-shadow: inset 1px 1px 10px #f3faf7;
-  ;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  text-align: center;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 0;
+  width: 49px;
+  height: 5px;
+  cursor: pointer;
+}
+
+.slick-dots li button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 49px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: white;
+  text-align: center;
+  font-family: 'slick';
+  opacity: .25;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -1146,7 +1183,6 @@ footer {
   .header__arrow {
     height: 0;
     opacity: 0;
-    // display: none;
   }
 
   .section4__circle3 {
