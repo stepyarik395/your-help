@@ -1,3 +1,9 @@
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+import 'slick-carousel';
+
 const menuItem = document.getElementById('accord');
 const menu = document.getElementById('hide-menu');
 const arrow = document.querySelector('.header__arrow');
